@@ -66,13 +66,13 @@ web服务器程序名启动的时候所在的目录为其工作目录，我们�
 
 ```cpp
 //改变工作路径
-    chdir("./web");
-    //检查工作路径
-    char buf[80];
+chdir("./web");
+//检查工作路径
+char buf[80];
 
-    getcwd(buf,sizeof(buf));
+getcwd(buf,sizeof(buf));
 
-    printf("current working directory: %s\n", buf);
+printf("current working directory: %s\n", buf);
 ```
 
 ### 3. 信号SIGPIPE问题
