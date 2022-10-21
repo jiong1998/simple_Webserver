@@ -101,7 +101,8 @@ while((n=Readline(connfd, buf, sizeof(buf)))>0);
 而循环读完缓冲区数据后，Readline函数会阻塞等待缓冲区的数据到来，所以将connfd设置成非阻塞。
 
 ### 5. 解析http请求报文的请求行
-如：GET /hanzi.c HTTP/1.1
+例如，请求行为：GET /hanzi.c HTTP/1.1
+
 利用sscanf函数以及正则表达式
 ```cpp
 char buf[1024];
