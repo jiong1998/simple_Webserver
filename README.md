@@ -114,6 +114,18 @@ sscanf(buf, "%[^ ] %[^ ] %[^\r\n]", reqType, fileName, protocal);
 
 
 ### .优化：多线程
+
+是不是可以再
+```cpp
+//2、客户的数据到
+else
+{
+	connfd = event[i].data.fd;
+	http_request(connfd, epfd);
+}
+```
+用子线程来处理http_request()//感觉可以
+
 ### .改为守护进程
 
 
