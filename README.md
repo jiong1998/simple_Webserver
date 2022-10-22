@@ -131,10 +131,13 @@ else
 经Webbench压力测试, 多线程版本下的性能比单线程版本的性能提升了十倍以上！
 
 多线程的epoll的压力测试结果：
-![Uploading 2021666410070_.pic.jpg…]()
+
+![2021666410070_ pic](https://user-images.githubusercontent.com/77431730/197317658-3acbdf4a-6696-453d-81d2-da356c9be7c4.jpg)
+
 单线程的epoll的压力测试结果：
 
 ![2031666410072_ pic](https://user-images.githubusercontent.com/77431730/197317629-7ca75793-8258-4b64-9739-172dc31ecdd6.jpg)
+
 
 ### .改为守护进程
 
