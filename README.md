@@ -118,7 +118,8 @@ sscanf(buf, "%[^ ] %[^ ] %[^\r\n]", reqType, fileName, protocal);
 
 
 ### 7.优化：多线程
-参考之前写过的多线程服务器代码（https://github.com/jiong1998/unix_socket.io/issues/3），将单线程改为多线程，具体来说
+参考之前写过的多线程服务器代码 https://github.com/jiong1998/unix_socket.io/issues/3
+将单线程改为多线程，具体来说
 ```cpp
 //2、客户的数据到
 else
