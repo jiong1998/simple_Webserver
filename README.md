@@ -5,6 +5,10 @@
 - 目前仅支持解析HTTP的GET请求行
 - 未来将参考github有名的项目：TinyWebServer来改进该项目
 - 本地环境：阿里云服务器linux
+- 经Webbench压力测试可以实现上万的并发连接数据交换
+
+压力测试图结果放在多线程优化中。
+
 
 注意：要开始这个项目，需要对linux编程、网络编程有一定的了解，这方面书籍推荐《**Unix网络编程**》
 
@@ -114,8 +118,7 @@ sscanf(buf, "%[^ ] %[^ ] %[^\r\n]", reqType, fileName, protocal);
 
 
 ### .优化：多线程
-
-是不是可以再
+参考之前写过的多线程服务器代码（https://github.com/jiong1998/unix_socket.io/issues/3），将单线程改为多线程，具体来说
 ```cpp
 //2、客户的数据到
 else
@@ -124,7 +127,14 @@ else
 	http_request(connfd, epfd);
 }
 ```
-用子线程来处理http_request()//感觉可以
+在原本单线程的代码中，客户请求连接和请求数据都是由一个主线程搞定的，在多线程版本中，由子线程完成 浏览器对数据的请求。
+经Webbench压力测试, 多线程版本下的性能比单线程版本的性能提升了十倍以上！
+
+多线程的epoll的压力测试结果：
+![Uploading 2021666410070_.pic.jpg…]()
+单线程的epoll的压力测试结果：
+
+![2031666410072_ pic](https://user-images.githubusercontent.com/77431730/197317629-7ca75793-8258-4b64-9739-172dc31ecdd6.jpg)
 
 ### .改为守护进程
 
