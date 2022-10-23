@@ -137,7 +137,7 @@ else
 
 
 多线程的epoll的压力测试结果：
-测试参数：webbench -c 2000 -t 30 http://120.25.144.39:8888/
+测试参数：webbench -c 2000 -t 60 http://120.25.144.39:8888/
 ![2021666410070_ pic](https://user-images.githubusercontent.com/77431730/197317658-3acbdf4a-6696-453d-81d2-da356c9be7c4.jpg)
 
 单线程的epoll的压力测试结果：
