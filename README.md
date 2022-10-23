@@ -119,7 +119,7 @@ sscanf(buf, "%[^ ] %[^ ] %[^\r\n]", reqType, fileName, protocal);
 ### 7.粘包现象
 两个解决思路
 1. 设置connfd为非阻塞，循环读，每次读判断是否n=0
-2. 利用select的超时特性，检查select的检查值（存疑，个人实验没解决，先保留）
+2. 利用select的超时特性，检查select的返回值（存疑，个人实验没解决，先保留）
 
 ### 8.优化：多线程
 参考之前写过的多线程服务器代码 https://github.com/jiong1998/unix_socket.io/issues/3
