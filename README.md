@@ -116,8 +116,12 @@ sscanf(buf, "%[^ ] %[^ ] %[^\r\n]", reqType, fileName, protocal);
 
 ### 6. 在浏览器中的每一次访问都是个独立的访问，与上一次的访问没有关系，这一点是需要注意的
 
+### 7.粘包现象
+两个解决思路
+1. 设置connfd为非阻塞，循环读，每次读判断是否n=0
+2. 利用select的超时特性，检查select的检查值（存疑，个人实验没解决，先保留）
 
-### 7.优化：多线程
+### 8.优化：多线程
 参考之前写过的多线程服务器代码 https://github.com/jiong1998/unix_socket.io/issues/3
 将单线程改为多线程，具体来说
 ```cpp
@@ -138,6 +142,7 @@ else
 单线程的epoll的压力测试结果：
 
 ![2031666410072_ pic](https://user-images.githubusercontent.com/77431730/197317629-7ca75793-8258-4b64-9739-172dc31ecdd6.jpg)
+
 
 
 ### .改为守护进程
